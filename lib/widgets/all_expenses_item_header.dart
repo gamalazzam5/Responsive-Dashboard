@@ -2,8 +2,15 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
 class AllExpensesItemHeader extends StatelessWidget {
-  const AllExpensesItemHeader({super.key, required this.image});
+  const AllExpensesItemHeader({
+    super.key,
+    required this.image,
+    this.imageBackgroundColor,
+    this.imageColor,
+    this.iconColor,
+  });
 
+  final Color? imageBackgroundColor, imageColor, iconColor;
   final String image;
 
   @override
@@ -17,11 +24,20 @@ class AllExpensesItemHeader extends StatelessWidget {
           padding: const EdgeInsets.all(14),
           decoration: ShapeDecoration(
             shape: OvalBorder(),
-            color: const Color(0xFFFAFAFA),
+            color: imageBackgroundColor ?? const Color(0xFFFAFAFA),
           ),
-          child: SvgPicture.asset(image),
-        ),Icon(Icons.arrow_forward_ios)
-        
+          child: SvgPicture.asset(
+            image,
+            colorFilter: ColorFilter.mode(
+              imageColor ?? const Color(0xFF4EB7F2),
+              BlendMode.srcIn,
+            ),
+          ),
+        ),
+        Icon(
+          Icons.arrow_forward_ios,
+          color: iconColor ?? const Color(0xFF064061),
+        ),
       ],
     );
   }
