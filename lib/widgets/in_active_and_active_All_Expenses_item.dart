@@ -64,7 +64,7 @@ class ActiveAllExpensesItem extends StatelessWidget {
           AllExpensesItemHeader(
             image: expensesItemModel.image,
             iconColor: Colors.white,
-            imageBackgroundColor:Colors.white.withValues(alpha: .1)  ,
+            imageBackgroundColor: Colors.white.withValues(alpha: .1),
             imageColor: Colors.white,
           ),
           SizedBox(height: 34),
