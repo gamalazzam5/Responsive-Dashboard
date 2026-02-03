@@ -6,6 +6,7 @@ import 'package:responsive_dashboard/widgets/my_card_section.dart';
 import 'package:responsive_dashboard/widgets/transaction_history.dart';
 
 import 'all_expenses_and_quick_invoice_section.dart';
+import 'income_section.dart';
 
 class DashboardDesktopLayout extends StatelessWidget {
   const DashboardDesktopLayout({super.key});
@@ -20,7 +21,13 @@ class DashboardDesktopLayout extends StatelessWidget {
             flex: 2,
             child: AllExpensesAndQuickInvoiceSection()),
         const SizedBox(width: 24,),
-        Expanded(child: MyCardAndTransactionHistorySection())
+        Expanded(child: Column(
+          children: [
+            MyCardAndTransactionHistorySection(),
+            SizedBox(height: 24,),
+            Expanded(child: IncomeSection())
+          ],
+        ))
         
       ],
     );

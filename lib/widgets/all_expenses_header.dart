@@ -3,14 +3,14 @@ import 'package:responsive_dashboard/utils/app_styles.dart';
 import 'package:responsive_dashboard/widgets/range_options.dart';
 
 class AllExpensesHeader extends StatelessWidget {
-  const AllExpensesHeader({super.key});
-
+  const AllExpensesHeader({super.key, this.title});
+final String? title;
   @override
   Widget build(BuildContext context) {
     return  Row(
       mainAxisAlignment: .spaceBetween,
       children: [
-        Text('All Expenses', style: AppStyles.styleSemiBold20(context)),
+        Text(title ??'All Expenses', style: AppStyles.styleSemiBold20(context)),
         const RangeOptions()
       ],
     );
