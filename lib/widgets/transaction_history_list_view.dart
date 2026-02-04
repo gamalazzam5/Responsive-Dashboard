@@ -20,7 +20,7 @@ class TransactionHistoryListView extends StatelessWidget {
       isWithdraw: false,
     ),
     TransactionHistoryModel(
-      title: 'Juni Mobile App',
+      title: 'Juni Mobile App Project',
       date: '13 Apr, 2022',
       amount: r'$20,129',
       isWithdraw: false,
@@ -29,11 +29,8 @@ class TransactionHistoryListView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return ListView.builder(
-      itemCount: transactionItem.length,
-      shrinkWrap: true,
-      itemBuilder: (context, index) =>
-          TransactionItem(transactionHistoryModel: transactionItem[index]),
+    return Column(
+      children: List.generate(transactionItem.length, (index)=> TransactionItem(transactionHistoryModel: transactionItem[index],) ),
     );
   }
 }

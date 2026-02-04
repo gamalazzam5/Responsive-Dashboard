@@ -7,6 +7,7 @@ class ItemDetails extends StatelessWidget {
   final ItemDetailsModel itemDetailsModel;
   @override
   Widget build(BuildContext context) {
+
     return ListTile(
       leading: Container(
         height: 12,
