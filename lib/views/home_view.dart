@@ -1,3 +1,4 @@
+
 import 'package:flutter/material.dart';
 import 'package:responsive_dashboard/utils/size_config.dart';
 import 'package:responsive_dashboard/widgets/adaptive_layout.dart';
@@ -19,11 +20,10 @@ class _HomeViewState extends State<HomeView> {
   @override
   Widget build(BuildContext context) {
     double width = MediaQuery.sizeOf(context).width;
-
     return Scaffold(
       key: scaffoldKey,
       drawer: width<SizeConfig.tablet? CustomDrawer():null,
-      appBar: width<SizeConfig.tablet? AppBar(
+      appBar: width< SizeConfig.tablet? AppBar(
         leading: IconButton( icon:Icon(Icons.menu,),onPressed: (){
         scaffoldKey.currentState!.openDrawer();
         },),

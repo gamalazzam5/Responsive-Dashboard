@@ -3,6 +3,7 @@ import 'package:flutter_svg/flutter_svg.dart';
 import 'package:responsive_dashboard/utils/app_styles.dart';
 
 import '../utils/app_images.dart';
+import '../utils/size_config.dart';
 
 class MyCard extends StatelessWidget {
   const MyCard({super.key});
@@ -52,7 +53,6 @@ class MyCard extends StatelessWidget {
                     ).copyWith(color: Colors.white),
                   ),
                   Text('12/20 - 124',style: AppStyles.styleRegular16(context).copyWith(color: Colors.white),),
-                  SizedBox(height: 27),
                 ],
               ),
             )

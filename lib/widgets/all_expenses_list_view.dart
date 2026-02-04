@@ -36,25 +36,27 @@ class _AllExpensesListViewState extends State<AllExpensesListView> {
   @override
   Widget build(BuildContext context) {
     return Row(
-      children: List.generate(items.length, (index) {
-        return Expanded(
-          child: GestureDetector(
-            onTap: () {
-              if (index != isSelected) {
-                setState(() {
-                  isSelected = index;
-                });
-              }
-            },
-            child: Padding(
-              padding: EdgeInsets.symmetric(horizontal: index == 1 ? 12 : 0),
+      children: List.generate(items.length * 2 - 1, (index) {
+        if (index.isEven) {
+          final itemIndex = index ~/ 2;
+          return Expanded(
+            child: GestureDetector(
+              onTap: () {
+                if (itemIndex != isSelected) {
+                  setState(() {
+                    isSelected = itemIndex;
+                  });
+                }
+              },
               child: AllExpensesItem(
-                expensesItemModel: items[index],
-                isSelected: isSelected == index,
+                expensesItemModel: items[itemIndex],
+                isSelected: isSelected == itemIndex,
               ),
             ),
-          ),
-        );
+          );
+        }
+
+        return const SizedBox(width: 12);
       }),
     );
   }

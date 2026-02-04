@@ -18,19 +18,29 @@ class AllExpensesItemHeader extends StatelessWidget {
     return Row(
       mainAxisAlignment: .spaceBetween,
       children: [
-        Container(
-          width: 60,
-          height: 60,
-          padding: const EdgeInsets.all(14),
-          decoration: ShapeDecoration(
-            shape: OvalBorder(),
-            color: imageBackgroundColor ?? const Color(0xFFFAFAFA),
-          ),
-          child: SvgPicture.asset(
-            image,
-            colorFilter: ColorFilter.mode(
-              imageColor ?? const Color(0xFF4EB7F2),
-              BlendMode.srcIn,
+        Flexible(
+          child: ConstrainedBox(
+            constraints: BoxConstraints(
+              maxWidth: 60
+            ),
+            child: AspectRatio(
+             aspectRatio: 1,
+              child: Container(
+
+                decoration: ShapeDecoration(
+                  shape: OvalBorder(),
+                  color: imageBackgroundColor ?? const Color(0xFFFAFAFA),
+                ),
+                child: Center(
+                  child: SvgPicture.asset(
+                    image,
+                    colorFilter: ColorFilter.mode(
+                      imageColor ?? const Color(0xFF4EB7F2),
+                      BlendMode.srcIn,
+                    ),
+                  ),
+                ),
+              ),
             ),
           ),
         ),
