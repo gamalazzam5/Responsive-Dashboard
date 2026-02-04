@@ -12,7 +12,10 @@ class IncomeSectionBody extends StatelessWidget {
   Widget build(BuildContext context) {
     double width =MediaQuery.sizeOf(context).width;
 
-    return width>= SizeConfig.desktop&& width<1750 ?  Expanded(child: DetailedIncomeChart()) :Row(
+    return width>= SizeConfig.desktop&& width<1750 ?  Expanded(child: Padding(
+      padding: const EdgeInsets.all(16),
+      child: DetailedIncomeChart(),
+    )) :Row(
       crossAxisAlignment: .center,
       children: [
         Expanded(child: IncomeChart()),
